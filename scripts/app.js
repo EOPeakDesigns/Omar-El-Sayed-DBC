@@ -4,6 +4,7 @@ import { formatPhoneNumber, sanitizePhoneForTel } from "./deepLinks.js";
 import { createAnnouncer, initAccessibility } from "./accessibility.js";
 import { initPwa } from "./pwa.js";
 import { setupQrModal } from "./qrHandler.js";
+import { setupVideoModal } from "./videoHandler.js";
 import { setupVCardDownload } from "./vcardHandler.js";
 
 const THEME_ORDER = ["system", "dark", "light"];
@@ -135,8 +136,13 @@ const renderTokenCopy = () => {
 
 const renderProfile = () => {
   const { card, language } = state;
+  const labels = getLabels();
   const profileImage = document.getElementById("profileImage");
   const coverImage = document.getElementById("coverImage");
+  const avatarShell = document.getElementById("avatarShell");
+  const openVideoButton = document.getElementById("openVideoButton");
+  const videoTriggerHint = document.getElementById("videoTriggerHint");
+  const hasFeatureVideo = Boolean(card.person.featureVideo?.src);
   const avatarCandidates = [
     "assets/onwer.png",
     "assets/owner.png",
@@ -174,6 +180,11 @@ const renderProfile = () => {
   document.getElementById("personName").textContent = card.person.name[language];
   document.getElementById("personTitle").textContent = card.person.title[language];
   document.getElementById("personBio").textContent = card.person.bio[language];
+  avatarShell.dataset.hasVideo = String(hasFeatureVideo);
+  openVideoButton.disabled = !hasFeatureVideo;
+  openVideoButton.setAttribute("aria-label", labels.watchVideo);
+  openVideoButton.setAttribute("title", labels.watchVideo);
+  videoTriggerHint.textContent = labels.watchVideo;
 };
 
 const renderContactDetails = () => {
@@ -329,6 +340,11 @@ const init = async () => {
     getCard: () => state.card,
     getLabels,
     announce
+  });
+  setupVideoModal({
+    getCard: () => state.card,
+    getLanguage: () => state.language,
+    getLabels
   });
   initPwa({
     getLabels,

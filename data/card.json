@@ -40,7 +40,20 @@
     },
     "pronouns": "he/him",
     "avatar": "assets/onwer.png",
-    "cover": "assets/images/cover-photography.svg"
+    "cover": "assets/images/cover-photography.svg",
+    "featureVideo": {
+      "type": "embed",
+      "src": "https://www.youtube-nocookie.com/embed/ysz5S6PUM-U?rel=0&modestbranding=1",
+      "aspectRatio": "16 / 9",
+      "title": {
+        "en": "Featured Reel",
+        "ar": "ريل مميز"
+      },
+      "caption": {
+        "en": "A visual showreel can live here, from portfolio highlights to any video the owner chooses.",
+        "ar": "يمكن عرض ريل مرئي هنا، من أبرز الأعمال إلى أي فيديو يختاره صاحب البطاقة."
+      }
+    }
   },
   "contact": {
     "email": "hello@omarelsayedphoto.com",
@@ -102,6 +115,8 @@
       "dismiss": "Dismiss",
       "theme": "Theme",
       "language": "AR",
+      "watchVideo": "Watch Reel",
+      "videoEyebrow": "Featured Video",
       "openLink": "Open link",
       "shareTitle": "Share Omar El-Sayed",
       "shareText": "Connect with Omar El-Sayed through this premium photography business card.",
@@ -132,6 +147,8 @@
       "dismiss": "إخفاء",
       "theme": "المظهر",
       "language": "EN",
+      "watchVideo": "مشاهدة الريل",
+      "videoEyebrow": "فيديو مميز",
       "openLink": "فتح الرابط",
       "shareTitle": "مشاركة بطاقة عمر السيد",
       "shareText": "تواصل مع عمر السيد عبر بطاقة التصوير الرقمية الراقية هذه.",

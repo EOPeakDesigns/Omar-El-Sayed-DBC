@@ -1,4 +1,4 @@
-const CACHE_NAME = "premium-card-v3";
+const CACHE_NAME = "premium-card-v4";
 const APP_SHELL = [
   "./",
   "./index.html",
@@ -10,6 +10,7 @@ const APP_SHELL = [
   "./scripts/app.js",
   "./scripts/deepLinks.js",
   "./scripts/qrHandler.js",
+  "./scripts/videoHandler.js",
   "./scripts/vcardHandler.js",
   "./scripts/clipboard.js",
   "./scripts/animations.js",
