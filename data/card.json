@@ -1,0 +1,145 @@
+{
+  "site": {
+    "url": "https://omarelsayedphoto.com/card",
+    "themeColor": "#013e37",
+    "displayName": "Omar El-Sayed Card",
+    "tagline": {
+      "en": "Cairo photographer for portraits, weddings, and refined visual storytelling.",
+      "ar": "مصور من القاهرة متخصص في البورتريه وحفلات الزفاف وصناعة قصص بصرية راقية."
+    }
+  },
+  "person": {
+    "name": {
+      "en": "Omar El-Sayed",
+      "ar": "عمر السيد"
+    },
+    "title": {
+      "en": "Photographer and Visual Storyteller",
+      "ar": "مصور وصانع حكاية بصرية"
+    },
+    "bio": {
+      "en": "Professional photographer specializing in portraits, weddings, and lifestyle campaigns. I create clean, emotive imagery with natural light, rich tones, and a cinematic editorial feel.",
+      "ar": "مصور مصري محترف متخصص في البورتريه وحفلات الزفاف وحملات اللايف ستايل، وأقدّم صوراً نظيفة ومؤثرة بإضاءة طبيعية ودرجات غنية ولمسة سينمائية تحريرية."
+    },
+    "availability": {
+      "en": "Booking selected 2026 wedding and portrait sessions",
+      "ar": "الحجوزات مفتوحة لجلسات الزفاف والبورتريه المختارة لعام 2026"
+    },
+    "company": {
+      "en": "Omar El-Sayed Studio",
+      "ar": "استوديو عمر السيد"
+    },
+    "location": {
+      "en": "Zamalek, Cairo, Egypt",
+      "ar": "الزمالك، القاهرة، مصر"
+    },
+    "timezone": "EET (GMT+2)",
+    "languages": {
+      "en": "Arabic and English",
+      "ar": "العربية والإنجليزية"
+    },
+    "pronouns": "he/him",
+    "avatar": "assets/onwer.png",
+    "cover": "assets/images/cover-photography.svg"
+  },
+  "contact": {
+    "email": "hello@omarelsayedphoto.com",
+    "phone": "+201024875314",
+    "whatsapp": "+201024875314",
+    "website": "https://omarelsayedphoto.com",
+    "maps": "https://maps.google.com/?q=26A+Mohamed+Mazhar+Street+Zamalek+Cairo+Egypt",
+    "address": {
+      "en": "26A Mohamed Mazhar Street, Zamalek, Cairo, Egypt",
+      "ar": "26 أ شارع محمد مظهر، الزمالك، القاهرة، مصر"
+    }
+  },
+  "socials": [
+    {
+      "id": "facebook",
+      "label": "Facebook",
+      "url": "https://facebook.com/omarelsayedphoto"
+    },
+    {
+      "id": "instagram",
+      "label": "Instagram",
+      "url": "https://instagram.com/omarelsayedphoto"
+    },
+    {
+      "id": "x",
+      "label": "X",
+      "url": "https://x.com/omarelsayedphoto"
+    },
+    {
+      "id": "linkedin",
+      "label": "LinkedIn",
+      "url": "https://linkedin.com/in/omarelsayedphoto"
+    },
+    {
+      "id": "globe",
+      "label": "Portfolio",
+      "url": "https://omarelsayedphoto.com"
+    }
+  ],
+  "labels": {
+    "en": {
+      "eyebrow": "Portrait • Wedding • Editorial",
+      "saveContact": "Save Contact",
+      "showQr": "Show QR Code",
+      "shareCard": "Share",
+      "copyEmail": "Copy email",
+      "copyPhone": "Copy number",
+      "email": "Email",
+      "phone": "Phone",
+      "whatsapp": "WhatsApp",
+      "website": "Website",
+      "maps": "Open map",
+      "downloadQr": "Download QR",
+      "scanLabel": "Scan to save or share instantly",
+      "close": "Close",
+      "installTitle": "Install this card",
+      "installBody": "Save it to your home screen for quick contact access even when you are offline.",
+      "installButton": "Install app",
+      "dismiss": "Dismiss",
+      "theme": "Theme",
+      "language": "AR",
+      "openLink": "Open link",
+      "shareTitle": "Share Omar El-Sayed",
+      "shareText": "Connect with Omar El-Sayed through this premium photography business card.",
+      "copiedEmail": "Email copied to clipboard.",
+      "copiedPhone": "Phone number copied to clipboard.",
+      "downloadContact": "Contact file downloaded.",
+      "downloadQrReady": "QR code ready to download.",
+      "qrUnavailable": "QR preview is unavailable offline, but sharing still works."
+    },
+    "ar": {
+      "eyebrow": "بورتريه • زفاف • إعلاني",
+      "saveContact": "حفظ جهة الاتصال",
+      "showQr": "إظهار رمز QR",
+      "shareCard": "مشاركة",
+      "copyEmail": "نسخ البريد",
+      "copyPhone": "نسخ الرقم",
+      "email": "البريد الإلكتروني",
+      "phone": "الهاتف",
+      "whatsapp": "واتساب",
+      "website": "الموقع",
+      "maps": "فتح الخريطة",
+      "downloadQr": "تنزيل رمز QR",
+      "scanLabel": "امسح للحفظ أو المشاركة فوراً",
+      "close": "إغلاق",
+      "installTitle": "ثبّت هذه البطاقة",
+      "installBody": "احفظها على الشاشة الرئيسية للوصول السريع إلى وسائل التواصل حتى دون اتصال.",
+      "installButton": "تثبيت التطبيق",
+      "dismiss": "إخفاء",
+      "theme": "المظهر",
+      "language": "EN",
+      "openLink": "فتح الرابط",
+      "shareTitle": "مشاركة بطاقة عمر السيد",
+      "shareText": "تواصل مع عمر السيد عبر بطاقة التصوير الرقمية الراقية هذه.",
+      "copiedEmail": "تم نسخ البريد الإلكتروني.",
+      "copiedPhone": "تم نسخ رقم الهاتف.",
+      "downloadContact": "تم تنزيل ملف جهة الاتصال.",
+      "downloadQrReady": "رمز QR جاهز للتنزيل.",
+      "qrUnavailable": "معاينة رمز QR غير متاحة دون اتصال، لكن المشاركة ما زالت تعمل."
+    }
+  }
+}

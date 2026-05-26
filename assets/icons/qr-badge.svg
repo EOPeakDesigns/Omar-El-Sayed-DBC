@@ -1,0 +1,15 @@
+<svg width="256" height="256" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="128" cy="128" r="128" fill="#FFF4C7"/>
+  <circle cx="128" cy="128" r="118" fill="#013E37"/>
+  <circle cx="128" cy="128" r="90" fill="#FFF4C7"/>
+  <circle cx="128" cy="128" r="82" stroke="#013E37" stroke-opacity="0.12" stroke-width="2"/>
+  <circle cx="128" cy="128" r="58" fill="url(#paint0_linear)" fill-opacity="0.2"/>
+  <text x="128" y="152" text-anchor="middle" fill="#013E37" font-size="56" font-weight="800" letter-spacing="-2.8" font-family="Inter, Segoe UI, Arial, sans-serif">OS</text>
+  <path d="M89 72.5C95.2 68 102.9 65.5 111.25 65.5H144.75C153.1 65.5 160.8 68 167 72.5" stroke="#FFF4C7" stroke-opacity="0.4" stroke-width="5" stroke-linecap="round"/>
+  <defs>
+    <linearGradient id="paint0_linear" x1="87" y1="77" x2="166" y2="176" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFFFF"/>
+      <stop offset="1" stop-color="#FFEFB3" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+</svg>

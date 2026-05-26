@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <title>Omar El-Sayed | Photographer Digital Card</title>
+    <meta
+      name="description"
+      content="Connect with Omar El-Sayed through a polished mobile-first photography business card with contact actions, QR sharing, and PWA support."
+    />
+    <meta name="theme-color" content="#ffefb3" />
+    <meta name="color-scheme" content="dark light" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Omar Card" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Omar El-Sayed | Photographer Digital Card" />
+    <meta
+      property="og:description"
+      content="A premium digital photography card built for quick contact, social sharing, QR access, and elegant mobile presentation."
+    />
+    <meta property="og:url" content="https://omarelsayedphoto.com/card" />
+    <meta property="og:image" content="https://omarelsayedphoto.com/card/assets/icons/social-preview.svg" />
+    <meta property="og:image:alt" content="Omar El-Sayed photography business card preview" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Omar El-Sayed | Photographer Digital Card" />
+    <meta
+      name="twitter:description"
+      content="A premium photography business card with one-tap contact, QR sharing, and installable mobile-first design."
+    />
+    <meta name="twitter:image" content="https://omarelsayedphoto.com/card/assets/icons/social-preview.svg" />
+
+    <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg" />
+    <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png" />
+    <link rel="canonical" href="https://omarelsayedphoto.com/card" />
+    <link rel="manifest" href="manifest.webmanifest" />
+
+    <link rel="preload" href="styles/variables.css" as="style" />
+    <link rel="preload" href="styles/main.css" as="style" />
+    <link rel="preload" href="assets/images/cover-photography.svg" as="image" type="image/svg+xml" />
+    <link rel="preload" href="assets/onwer.png" as="image" type="image/png" />
+    <link rel="stylesheet" href="styles/variables.css" />
+    <link rel="stylesheet" href="styles/animations.css" />
+    <link rel="stylesheet" href="styles/main.css" />
+    <link rel="stylesheet" href="styles/responsive.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <div class="app-backdrop" aria-hidden="true"></div>
+
+    <noscript>
+      <div class="noscript-banner">
+        JavaScript powers sharing, QR generation, and install support for this card.
+      </div>
+    </noscript>
+
+    <main class="app-shell" id="main-content">
+      <section class="card-panel profile-card" data-reveal>
+        <div class="profile-card__cover">
+          <img
+            id="coverImage"
+            class="profile-card__cover-image"
+            src="assets/images/cover-photography.svg"
+            alt=""
+            width="760"
+            height="320"
+            loading="eager"
+            decoding="async"
+          />
+
+          <button
+            class="cover-action"
+            id="showQrButton"
+            type="button"
+            aria-label="Show QR Code"
+            title="Show QR Code"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M4 4h6v2H6v4H4V4Zm10 0h6v6h-2V6h-4V4ZM4 14h2v4h4v2H4v-6Zm14 0h2v6h-6v-2h4v-4ZM9 9h6v6H9V9Zm2 2v2h2v-2h-2Z"
+              />
+            </svg>
+          </button>
+        </div>
+
+        <div class="profile-card__body">
+          <div class="avatar-shell">
+            <img
+              id="profileImage"
+              class="avatar"
+              src="assets/onwer.png"
+              alt="Portrait of Omar El-Sayed"
+              width="152"
+              height="152"
+              loading="eager"
+              decoding="async"
+            />
+          </div>
+
+          <div class="profile-card__intro">
+            <p class="profile-card__eyebrow" data-copy="eyebrow">Portrait • Wedding • Editorial</p>
+            <h1 class="hero__name" id="personName">Omar El-Sayed</h1>
+            <p class="hero__title" id="personTitle">Photographer and Visual Storyteller</p>
+            <p class="hero__bio" id="personBio">
+              Professional photographer specializing in portraits, weddings, and
+              lifestyle campaigns with a cinematic editorial feel.
+            </p>
+          </div>
+
+          <div class="utility-strip" aria-label="Card utilities">
+            <button class="utility-button" id="saveContactButton" type="button">
+              <span data-copy="saveContact">Save Contact</span>
+            </button>
+            <button class="utility-button" id="shareButton" type="button">
+              <span data-copy="shareCard">Share</span>
+            </button>
+            <button class="utility-button utility-button--icon" id="themeToggle" type="button">
+              <span id="themeToggleText">Auto</span>
+            </button>
+            <button class="utility-button utility-button--icon" id="languageToggle" type="button">
+              <span id="languageToggleText">AR</span>
+            </button>
+          </div>
+
+          <div class="contact-list" aria-label="Contact details">
+            <article class="contact-row">
+              <a id="phoneLink" class="contact-row__main" href="tel:+201024875314">
+                <span class="contact-row__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24">
+                    <path
+                      d="M7.16 4.8A1.5 1.5 0 0 1 8.57 4h1.58a1.5 1.5 0 0 1 1.47 1.2l.4 2.02a1.5 1.5 0 0 1-.43 1.35l-1.08 1.06a12.88 12.88 0 0 0 3.86 3.86l1.06-1.08a1.5 1.5 0 0 1 1.35-.43l2.02.4a1.5 1.5 0 0 1 1.2 1.47v1.58a1.5 1.5 0 0 1-.8 1.4l-1.43.75a3 3 0 0 1-2.56.12 18.2 18.2 0 0 1-9.92-9.92 3 3 0 0 1 .12-2.56l.75-1.42Z"
+                    />
+                  </svg>
+                </span>
+                <span class="contact-row__value" id="phoneValue">+20 10 2487 5314</span>
+              </a>
+              <button
+                class="contact-row__action"
+                id="copyPhoneButton"
+                type="button"
+                data-copy-value="+201024875314"
+                data-copy-message-key="copiedPhone"
+              >
+                <span class="sr-only" data-copy="copyPhone">Copy number</span>
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    d="M9 7a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-8a2 2 0 0 1-2-2V7Zm-6 4a2 2 0 0 1 2-2h1v2H5v8h8v-1h2v1a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-8Z"
+                  />
+                </svg>
+              </button>
+            </article>
+
+            <article class="contact-row">
+              <a id="websiteLink" class="contact-row__main" href="https://omarelsayedphoto.com" target="_blank" rel="noopener">
+                <span class="contact-row__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24">
+                    <path
+                      d="M5 5.5A2.5 2.5 0 0 1 7.5 3h9A2.5 2.5 0 0 1 19 5.5v13a2.5 2.5 0 0 1-2.5 2.5h-9A2.5 2.5 0 0 1 5 18.5v-13Zm2 .5v2h10V6H7Zm0 4v8h10v-8H7Zm2 1.5h2v2H9v-2Zm3.5 0H15a1 1 0 1 1 0 2h-2.5a1 1 0 1 1 0-2Z"
+                    />
+                  </svg>
+                </span>
+                <span class="contact-row__value" id="websiteValue">www.omarelsayedphoto.com</span>
+              </a>
+            </article>
+
+            <article class="contact-row">
+              <a id="emailLink" class="contact-row__main" href="mailto:hello@omarelsayedphoto.com">
+                <span class="contact-row__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24">
+                    <path
+                      d="M4 6.5A2.5 2.5 0 0 1 6.5 4h11A2.5 2.5 0 0 1 20 6.5v11a2.5 2.5 0 0 1-2.5 2.5h-11A2.5 2.5 0 0 1 4 17.5v-11Zm1.8.48v.2l6.2 4.65 6.2-4.65v-.2a.7.7 0 0 0-.7-.68h-11a.7.7 0 0 0-.7.68Zm12.4 2.45-5.66 4.23a1 1 0 0 1-1.2 0L5.8 9.43v8.07c0 .39.31.7.7.7h11a.7.7 0 0 0 .7-.7V9.43Z"
+                    />
+                  </svg>
+                </span>
+                <span class="contact-row__value" id="emailValue">hello@omarelsayedphoto.com</span>
+              </a>
+              <button
+                class="contact-row__action"
+                id="copyEmailButton"
+                type="button"
+                data-copy-value="hello@omarelsayedphoto.com"
+                data-copy-message-key="copiedEmail"
+              >
+                <span class="sr-only" data-copy="copyEmail">Copy email</span>
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    d="M9 7a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-8a2 2 0 0 1-2-2V7Zm-6 4a2 2 0 0 1 2-2h1v2H5v8h8v-1h2v1a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-8Z"
+                  />
+                </svg>
+              </button>
+            </article>
+
+            <article class="contact-row">
+              <a id="addressLink" class="contact-row__main" href="https://maps.google.com/?q=Zamalek+Cairo+Egypt" target="_blank" rel="noopener">
+                <span class="contact-row__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24">
+                    <path
+                      d="M12 3.5a6.5 6.5 0 0 0-6.5 6.5c0 4.55 5.42 9.9 5.65 10.12a1.2 1.2 0 0 0 1.7 0c.23-.22 5.65-5.57 5.65-10.12A6.5 6.5 0 0 0 12 3.5Zm0 8.95a2.45 2.45 0 1 1 2.45-2.45A2.45 2.45 0 0 1 12 12.45Z"
+                    />
+                  </svg>
+                </span>
+                <span class="contact-row__value" id="addressValue">Zamalek, Cairo, Egypt</span>
+              </a>
+            </article>
+          </div>
+
+          <div class="social-footer">
+            <div class="social-grid" id="socialGrid" aria-label="Social links"></div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <section class="install-banner" id="installBanner" hidden aria-live="polite">
+      <div>
+        <h2 id="installTitle">Install this card</h2>
+        <p id="installBody">
+          Save it to your home screen for one-tap access and offline availability.
+        </p>
+      </div>
+      <div class="install-banner__actions">
+        <button class="button button--primary" id="installButton" type="button">
+          Install app
+        </button>
+        <button class="button button--ghost" id="dismissInstallButton" type="button">
+          Dismiss
+        </button>
+      </div>
+    </section>
+
+    <div class="modal" id="qrModal" hidden>
+      <div class="modal__backdrop" data-close-modal="true"></div>
+      <section
+        class="modal__sheet"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="qrTitle"
+        aria-describedby="qrCaption"
+        tabindex="-1"
+      >
+        <div class="modal__header">
+          <div>
+            <p class="modal__eyebrow">QR</p>
+            <h2 id="qrTitle">Show QR Code</h2>
+          </div>
+          <button class="icon-button" id="closeQrButton" type="button" aria-label="Close QR modal">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M6.7 5.28a1 1 0 0 1 1.42 0L12 9.17l3.88-3.89a1 1 0 1 1 1.41 1.42L13.4 10.58l3.89 3.88a1 1 0 1 1-1.42 1.41L12 12l-3.88 3.87a1 1 0 1 1-1.41-1.41l3.87-3.88-3.87-3.88a1 1 0 0 1 0-1.42Z"
+              />
+            </svg>
+          </button>
+        </div>
+
+        <div class="modal__body">
+          <div class="qr-frame">
+            <img
+              id="qrImage"
+              src="assets/MYQR.png"
+              alt="Scannable QR code for the digital business card"
+              width="320"
+              height="320"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+          <p class="modal__caption" id="qrCaption">Scan to save or share instantly</p>
+          <div class="modal__actions">
+            <a class="button button--secondary" id="downloadQrButton" href="assets/MYQR.png" download>
+              Download QR
+            </a>
+            <button class="button button--ghost" id="closeQrTextButton" type="button">
+              <span data-copy="close">Close</span>
+            </button>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <div class="sr-only" id="liveRegion" aria-live="polite" aria-atomic="true"></div>
+
+    <script type="module" src="scripts/app.js"></script>
+  </body>
+</html>

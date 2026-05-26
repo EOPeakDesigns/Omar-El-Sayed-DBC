@@ -1,0 +1,132 @@
+:root {
+  --accent: #6e7cff;
+  --accent-strong: #4f5ef7;
+  --accent-soft: rgba(110, 124, 255, 0.14);
+  --success: #24b47e;
+  --warning: #f59e0b;
+
+  --color-bg: #eef2f9;
+  --color-bg-elevated: rgba(255, 255, 255, 0.76);
+  --color-surface: rgba(255, 255, 255, 0.88);
+  --color-surface-strong: #ffffff;
+  --color-border: rgba(15, 23, 42, 0.08);
+  --color-text: #111827;
+  --color-text-muted: #5b6474;
+  --color-text-soft: #7a8394;
+  --color-inverse: #f8fbff;
+  --color-overlay: rgba(15, 23, 42, 0.6);
+
+  --gradient-bg:
+    radial-gradient(circle at top left, rgba(110, 124, 255, 0.18), transparent 36%),
+    radial-gradient(circle at top right, rgba(38, 198, 218, 0.18), transparent 28%),
+    linear-gradient(180deg, #f8faff 0%, #eef2f9 100%);
+
+  --shadow-soft: 0 24px 60px rgba(15, 23, 42, 0.09);
+  --shadow-strong: 0 18px 50px rgba(15, 23, 42, 0.12);
+  --shadow-button: 0 10px 30px rgba(79, 94, 247, 0.18);
+
+  --radius-xs: 0.875rem;
+  --radius-sm: 1.125rem;
+  --radius-md: 1.5rem;
+  --radius-lg: 2rem;
+  --radius-full: 999px;
+
+  --space-1: clamp(0.5rem, 0.45rem + 0.2vw, 0.7rem);
+  --space-2: clamp(0.75rem, 0.65rem + 0.35vw, 1rem);
+  --space-3: clamp(1rem, 0.85rem + 0.6vw, 1.35rem);
+  --space-4: clamp(1.25rem, 1rem + 0.9vw, 1.8rem);
+  --space-5: clamp(1.75rem, 1.35rem + 1.1vw, 2.4rem);
+  --space-6: clamp(2rem, 1.5rem + 2vw, 3rem);
+
+  --font-sans:
+    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  --font-size-xs: clamp(0.72rem, 0.7rem + 0.15vw, 0.78rem);
+  --font-size-sm: clamp(0.86rem, 0.83rem + 0.2vw, 0.95rem);
+  --font-size-base: clamp(0.98rem, 0.94rem + 0.25vw, 1.05rem);
+  --font-size-md: clamp(1.08rem, 1rem + 0.4vw, 1.22rem);
+  --font-size-lg: clamp(1.35rem, 1.2rem + 0.8vw, 1.7rem);
+  --font-size-xl: clamp(2rem, 1.6rem + 2vw, 2.8rem);
+  --line-tight: 1.08;
+  --line-body: 1.6;
+
+  --container-max: min(100% - 1.25rem, 31rem);
+  --touch-target: 2.875rem;
+  --header-offset: calc(var(--space-4) + env(safe-area-inset-top, 0px));
+  --dock-offset: calc(5.8rem + env(safe-area-inset-bottom, 0px));
+  --motion-fast: 180ms;
+  --motion-base: 300ms;
+  --motion-slow: 480ms;
+  --ease-standard: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --accent: #8792ff;
+    --accent-strong: #9ca7ff;
+    --accent-soft: rgba(135, 146, 255, 0.18);
+    --color-bg: #08111f;
+    --color-bg-elevated: rgba(12, 19, 33, 0.74);
+    --color-surface: rgba(16, 24, 39, 0.84);
+    --color-surface-strong: #111b2d;
+    --color-border: rgba(255, 255, 255, 0.08);
+    --color-text: #f3f6fb;
+    --color-text-muted: #c0c7d2;
+    --color-text-soft: #97a3b8;
+    --color-inverse: #08111f;
+    --color-overlay: rgba(2, 6, 23, 0.72);
+    --gradient-bg:
+      radial-gradient(circle at top left, rgba(135, 146, 255, 0.24), transparent 34%),
+      radial-gradient(circle at top right, rgba(56, 189, 248, 0.18), transparent 28%),
+      linear-gradient(180deg, #08111f 0%, #0e1726 100%);
+    --shadow-soft: 0 24px 60px rgba(0, 0, 0, 0.3);
+    --shadow-strong: 0 20px 55px rgba(0, 0, 0, 0.38);
+    --shadow-button: 0 10px 30px rgba(135, 146, 255, 0.18);
+  }
+}
+
+html[data-theme="light"] {
+  --accent: #6e7cff;
+  --accent-strong: #4f5ef7;
+  --accent-soft: rgba(110, 124, 255, 0.14);
+  --color-bg: #eef2f9;
+  --color-bg-elevated: rgba(255, 255, 255, 0.76);
+  --color-surface: rgba(255, 255, 255, 0.88);
+  --color-surface-strong: #ffffff;
+  --color-border: rgba(15, 23, 42, 0.08);
+  --color-text: #111827;
+  --color-text-muted: #5b6474;
+  --color-text-soft: #7a8394;
+  --color-inverse: #f8fbff;
+  --color-overlay: rgba(15, 23, 42, 0.6);
+  --gradient-bg:
+    radial-gradient(circle at top left, rgba(110, 124, 255, 0.18), transparent 36%),
+    radial-gradient(circle at top right, rgba(38, 198, 218, 0.18), transparent 28%),
+    linear-gradient(180deg, #f8faff 0%, #eef2f9 100%);
+  --shadow-soft: 0 24px 60px rgba(15, 23, 42, 0.09);
+  --shadow-strong: 0 18px 50px rgba(15, 23, 42, 0.12);
+  --shadow-button: 0 10px 30px rgba(79, 94, 247, 0.18);
+}
+
+html[data-theme="dark"] {
+  --accent: #8792ff;
+  --accent-strong: #9ca7ff;
+  --accent-soft: rgba(135, 146, 255, 0.18);
+  --color-bg: #08111f;
+  --color-bg-elevated: rgba(12, 19, 33, 0.74);
+  --color-surface: rgba(16, 24, 39, 0.84);
+  --color-surface-strong: #111b2d;
+  --color-border: rgba(255, 255, 255, 0.08);
+  --color-text: #f3f6fb;
+  --color-text-muted: #c0c7d2;
+  --color-text-soft: #97a3b8;
+  --color-inverse: #08111f;
+  --color-overlay: rgba(2, 6, 23, 0.72);
+  --gradient-bg:
+    radial-gradient(circle at top left, rgba(135, 146, 255, 0.24), transparent 34%),
+    radial-gradient(circle at top right, rgba(56, 189, 248, 0.18), transparent 28%),
+    linear-gradient(180deg, #08111f 0%, #0e1726 100%);
+  --shadow-soft: 0 24px 60px rgba(0, 0, 0, 0.3);
+  --shadow-strong: 0 20px 55px rgba(0, 0, 0, 0.38);
+  --shadow-button: 0 10px 30px rgba(135, 146, 255, 0.18);
+}

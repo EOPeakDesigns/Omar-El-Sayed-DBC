@@ -1,0 +1,103 @@
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(18px) scale(0.985);
+  transition:
+    opacity var(--motion-slow) var(--ease-standard),
+    transform var(--motion-slow) var(--ease-standard);
+}
+
+[data-reveal].is-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.button:hover,
+.icon-button:hover,
+.mini-action:hover,
+.action-card:hover,
+.social-link:hover,
+.dock-action:hover {
+  transform: translateY(-1px);
+}
+
+.button--primary:hover {
+  box-shadow: 0 12px 34px rgba(79, 94, 247, 0.22);
+}
+
+.card-panel,
+.button,
+.icon-button,
+.mini-action,
+.social-link,
+.action-card,
+.dock-action,
+.install-banner,
+.modal__sheet {
+  will-change: transform;
+}
+
+.modal:not([hidden]) .modal__backdrop {
+  animation: fade-in var(--motion-base) var(--ease-standard);
+}
+
+.modal:not([hidden]) .modal__sheet {
+  animation: sheet-up var(--motion-base) var(--ease-standard);
+}
+
+.install-banner:not([hidden]) {
+  animation: banner-in var(--motion-base) var(--ease-standard);
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes sheet-up {
+  from {
+    opacity: 0;
+    transform: translate(-50%, calc(-50% + 1rem));
+  }
+
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@keyframes banner-in {
+  from {
+    opacity: 0;
+    transform: translateY(1rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  [data-reveal] {
+    opacity: 1;
+    transform: none;
+  }
+}

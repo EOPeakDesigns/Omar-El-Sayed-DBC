@@ -1,0 +1,85 @@
+@media (max-width: 359px) {
+  .app-shell {
+    width: min(100% - 0.25rem, 28rem);
+  }
+
+  .profile-card__body {
+    padding-inline: 1rem;
+  }
+
+  .hero__bio {
+    max-width: 16.5rem;
+  }
+
+  .contact-row {
+    min-height: 3.45rem;
+  }
+
+  .contact-row__main {
+    gap: 0.65rem;
+  }
+
+  .contact-row__value {
+    font-size: 0.97rem;
+  }
+}
+
+@media (min-width: 480px) {
+  .app-shell {
+    width: min(100% - 1rem, 31rem);
+  }
+
+  .profile-card__cover {
+    height: 9.8rem;
+  }
+
+  .avatar-shell {
+    width: 7rem;
+    height: 7rem;
+    top: -3.2rem;
+  }
+
+  .profile-card__body {
+    padding-top: 4.5rem;
+    padding-inline: 1.5rem;
+  }
+
+  .install-banner {
+    inset-inline: max(0.75rem, calc(50% - 15rem));
+  }
+}
+
+@media (min-width: 768px) {
+  .app-shell {
+    width: min(100% - 2rem, 34rem);
+    padding-top: 1rem;
+  }
+
+  .install-banner {
+    inset-inline: auto;
+    right: 1.25rem;
+    width: 22rem;
+  }
+
+  [dir="rtl"] .install-banner {
+    left: 1.25rem;
+    right: auto;
+  }
+}
+
+@media (min-width: 1100px) {
+  .app-shell {
+    padding-top: 1.4rem;
+  }
+}
+
+@media (orientation: landscape) and (max-height: 540px) {
+  .app-shell {
+    padding-top: 0.6rem;
+  }
+
+  .modal__sheet {
+    max-height: 92vh;
+    overflow: auto;
+  }
+}

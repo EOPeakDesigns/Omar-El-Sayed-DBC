@@ -1,0 +1,51 @@
+{
+  "name": "Omar El-Sayed Photographer Card",
+  "short_name": "Omar Card",
+  "description": "A premium mobile-first photography card for Omar El-Sayed with instant contact actions, QR sharing, and offline-ready PWA support.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#ffefb3",
+  "theme_color": "#013e37",
+  "lang": "en",
+  "dir": "ltr",
+  "categories": ["business", "productivity", "portfolio"],
+  "icons": [
+    {
+      "src": "assets/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/icons/maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "WhatsApp",
+      "short_name": "WhatsApp",
+      "url": "https://wa.me/201024875314"
+    },
+    {
+      "name": "Email",
+      "short_name": "Email",
+      "url": "mailto:hello@omarelsayedphoto.com"
+    },
+    {
+      "name": "Website",
+      "short_name": "Website",
+      "url": "https://omarelsayedphoto.com"
+    }
+  ]
+}
