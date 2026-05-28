@@ -49,6 +49,18 @@
   }
 }
 
+@media (max-width: 768px) {
+  #videoModal .modal__sheet--video {
+    width: min(94vw, 420px);
+    max-height: min(90dvh, 90vh);
+    overflow-y: auto;
+  }
+
+  .video-embed {
+    min-height: 180px;
+  }
+}
+
 @media (min-width: 768px) {
   .app-shell {
     width: min(100% - 2rem, 34rem);

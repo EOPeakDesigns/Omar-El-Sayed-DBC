@@ -325,24 +325,18 @@
         </div>
 
         <div class="modal__body modal__body--video">
-          <div class="video-frame" id="videoFrame">
-            <iframe
-              id="featureVideoFrame"
-              src="about:blank"
-              title="Behind the Lens Showcase"
-              loading="lazy"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowfullscreen
-              hidden
-            ></iframe>
-            <video
-              id="featureVideoPlayer"
-              controls
-              playsinline
-              preload="none"
-              poster="assets/onwer.png"
-              hidden
-            ></video>
+          <div class="video-container">
+            <div class="video-embed">
+              <iframe
+                id="profileVideoFrame"
+                data-src="https://www.youtube.com/embed/2Ri8f-wqonE?playsinline=1&amp;rel=0&amp;modestbranding=1"
+                title="YouTube video player"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+                loading="lazy"
+              ></iframe>
+            </div>
           </div>
           <p class="modal__caption" id="videoCaption">
             A cinematic showcase space for signature projects, client stories, or any visual piece the owner chooses.

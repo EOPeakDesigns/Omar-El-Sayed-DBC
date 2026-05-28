@@ -1,32 +1,14 @@
 import { trapFocus } from "./accessibility.js";
 
-const DEFAULT_ASPECT_RATIO = "16 / 9";
-
-const buildEmbedUrl = (src) => {
-  try {
-    const url = new URL(src);
-
-    if (!url.searchParams.has("autoplay")) {
-      url.searchParams.set("autoplay", "1");
-    }
-
-    if (!url.searchParams.has("playsinline")) {
-      url.searchParams.set("playsinline", "1");
-    }
-
-    return url.toString();
-  } catch {
-    return src;
-  }
-};
+const YOUTUBE_EMBED =
+  "https://www.youtube.com/embed/2Ri8f-wqonE?playsinline=1&rel=0&modestbranding=1";
 
 export const setupVideoModal = ({ getCard, getLanguage, getLabels }) => {
   const modal = document.getElementById("videoModal");
   const modalSheet = modal?.querySelector(".modal__sheet");
   const openButton = document.getElementById("openVideoButton");
-  const frame = document.getElementById("featureVideoFrame");
-  const player = document.getElementById("featureVideoPlayer");
-  const frameWrapper = document.getElementById("videoFrame");
+  const iframe = document.getElementById("profileVideoFrame");
+  const legacyPlayer = document.getElementById("featureVideoPlayer");
   const eyebrow = document.getElementById("videoEyebrow");
   const title = document.getElementById("videoTitle");
   const caption = document.getElementById("videoCaption");
@@ -38,14 +20,47 @@ export const setupVideoModal = ({ getCard, getLanguage, getLabels }) => {
 
   const getVideo = () => getCard()?.person?.featureVideo;
 
+  const getEmbedSrc = () => {
+    const fromData = iframe?.dataset.src?.trim();
+    const fromCard = getVideo()?.src?.trim();
+    return fromData || fromCard || YOUTUBE_EMBED;
+  };
+
+  const loadEmbed = () => {
+    if (!iframe) {
+      return;
+    }
+
+    const embedSrc = getEmbedSrc();
+    iframe.dataset.src = embedSrc;
+    iframe.src = embedSrc;
+    iframe.removeAttribute("hidden");
+  };
+
+  const unloadEmbed = () => {
+    if (!iframe) {
+      return;
+    }
+
+    iframe.src = "";
+    iframe.setAttribute("hidden", "");
+  };
+
+  const resetLegacyVideo = () => {
+    if (!legacyPlayer) {
+      return;
+    }
+
+    legacyPlayer.pause();
+    legacyPlayer.removeAttribute("src");
+    legacyPlayer.load();
+    legacyPlayer.hidden = true;
+    legacyPlayer.removeAttribute("poster");
+  };
+
   const resetMedia = () => {
-    frame.hidden = true;
-    frame.src = "about:blank";
-    player.pause();
-    player.removeAttribute("src");
-    player.load();
-    player.hidden = true;
-    player.removeAttribute("poster");
+    unloadEmbed();
+    resetLegacyVideo();
   };
 
   const closeModal = ({ blurReturnFocus = false } = {}) => {
@@ -67,7 +82,7 @@ export const setupVideoModal = ({ getCard, getLanguage, getLabels }) => {
     const language = getLanguage();
     const labels = getLabels();
 
-    if (!video?.src) {
+    if (!video?.src && !iframe?.dataset.src) {
       return;
     }
 
@@ -77,33 +92,37 @@ export const setupVideoModal = ({ getCard, getLanguage, getLabels }) => {
     cleanupFocusTrap = trapFocus(modalSheet, () => closeModal({ blurReturnFocus: true }));
 
     eyebrow.textContent = labels.videoEyebrow;
-    title.textContent = video.title?.[language] || video.title?.en || labels.watchVideo;
-    caption.textContent = video.caption?.[language] || video.caption?.en || "";
-    frameWrapper.style.setProperty("--video-aspect", video.aspectRatio || DEFAULT_ASPECT_RATIO);
+    title.textContent = video?.title?.[language] || video?.title?.en || labels.watchVideo;
+    caption.textContent = video?.caption?.[language] || video?.caption?.en || "";
+    iframe.title = title.textContent;
 
-    if (video.type === "file") {
-      player.hidden = false;
-      player.poster = video.poster || getCard()?.person?.avatar || "";
-      player.src = video.src;
-      player.setAttribute("aria-label", title.textContent);
+    if (video?.type === "file" && legacyPlayer) {
+      legacyPlayer.hidden = false;
+      legacyPlayer.poster = video.poster || getCard()?.person?.avatar || "";
+      legacyPlayer.src = video.src;
+      legacyPlayer.setAttribute("aria-label", title.textContent);
 
       try {
-        await player.play();
+        await legacyPlayer.play();
       } catch {
-        player.controls = true;
+        legacyPlayer.controls = true;
       }
 
       return;
     }
 
-    frame.hidden = false;
-    frame.title = title.textContent;
-    frame.src = buildEmbedUrl(video.src);
+    loadEmbed();
   };
 
   openButton?.addEventListener("click", openModal);
 
   closeButtons?.forEach((button) => {
     button.addEventListener("click", () => closeModal());
+  });
+
+  modal?.addEventListener("click", (event) => {
+    if (event.target === modal || event.target.matches("[data-close-video]")) {
+      closeModal();
+    }
   });
 };

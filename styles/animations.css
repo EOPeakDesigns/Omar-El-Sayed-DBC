@@ -44,6 +44,10 @@
   animation: sheet-up var(--motion-base) var(--ease-standard);
 }
 
+#videoModal:not([hidden]) .modal__sheet {
+  animation: fade-in var(--motion-base) var(--ease-standard);
+}
+
 .install-banner:not([hidden]) {
   animation: banner-in var(--motion-base) var(--ease-standard);
 }
